@@ -1,12 +1,17 @@
-// The Vue build version to load with the 'import' command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import store from './store'
+/******************************************************************************
+* SOMOS TODOS JAO 2017 - LUIGUI DELYER | MEU NOME É JAO @ S1X                 *
+* GITHUB = https://github.com/somos-todos-jao/site-2017                       *
+* VUE COMPONENTS WRITING USING ATOMIC DESIGN CONCEPT                          *
+* SPECIFIC PARTS OF THE JS CODE ARE INSIDE THE COMPONENTS                     *
+******************************************************************************/
 
-/* eslint-disable no-new */
+import Vue from 'vue'
+import router from './router'
+import store from './store'
+import SomosTodosJao from './components/stj'
+
 new Vue({
+    router,
     store,
-    el: '#app',
-    render: h => h(App)
-})
+    render: h => h(SomosTodosJao)
+}).$mount('#app-jao')
