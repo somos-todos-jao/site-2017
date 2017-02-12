@@ -1,12 +1,31 @@
+<style lang="sass">
+    @import ../sass/stj
+</style>
+
 <template lang="pug">
     #stj
         router-view(name="content")
 </template>
 
 <script>
-export default {
-}
-</script>
+    import { mapState, mapActions } from 'vuex'
 
-<style lang="css">
-</style>
+    export default {
+        data: () => ({}),
+        components: {},
+        computed: {
+            ...mapState({
+                // data: state => state.data
+            })
+        },
+        methods: {
+            ...mapActions([''])
+        },
+        created: function () {},
+        mounted: function () {},
+        updated: function () {},
+        destroyed: function () {},
+        props: [],
+        watch: {}
+    }
+</script>
