@@ -6,7 +6,7 @@ import store from './store'
 
 /* eslint-disable no-new */
 new Vue({
-  store,
-  el: '#app',
-  render: h => h(App)
+    store,
+    el: '#app',
+    render: h => h(App)
 })
