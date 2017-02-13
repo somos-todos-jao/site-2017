@@ -1,5 +1,9 @@
 <style lang="sass">
     @import ../sass/stj
+
+    #stj
+        height: 100%
+        width: 100%
 </style>
 
 <template lang="pug">
