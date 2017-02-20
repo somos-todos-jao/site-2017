@@ -107,6 +107,8 @@
                                 align-self: center
                                 width: 100%
                                 height: 100%
+                                top: 0
+                                left: 0
 
                             > .photo-container
                                 position: absolute
@@ -160,7 +162,7 @@
                             input#upload-field(type="file", @change="fetchPhoto")
                             .border
                                 img(src="static/moldura.png")
-                            .photo-container
+                            .photo-container(:style="{backgroundImage: 'url(' + imageUpload + ')'}")
                             .camera-icon
                                 i.fa.fa-camera
                                 label(v-if="!loading") foto oficial
@@ -251,13 +253,14 @@
 </template>
 
 <script>
-    import postPhoto from '../../services/photo'
+    import { postPhoto as post } from '../../services/photo'
     import { mapState, mapActions } from 'vuex'
 
     export default {
         data: () => ({
             type: 0,
-            loading: ''
+            loading: '',
+            imageUpload: ''
         }),
         components: {},
         computed: {
@@ -285,13 +288,15 @@
                 let input = event.target
                 if (input.files && input.files[0]) {
                     this.loading = true
-                    postPhoto(event)
-                    .then(response => response.data)
-                    .then(data => {
-                        console.log(data)
-                    })
-                    .then(() => {
+                    post(input.files[0])
+                    .then(response => {
+                        console.log(response)
+                        this.imageUpload = 'api/uploads/' + response.data.file
                         this.loading = false
+                    })
+                    .catch((error) => {
+                        console.log('Upload error. HTTP Status: ' + error.response.status)
+                        console.log(error.response.data)
                     })
                 }
             }

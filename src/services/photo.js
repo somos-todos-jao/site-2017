@@ -7,8 +7,19 @@ import { requester as http } from './http'
 *
 * @returns {Promise}
 */
-const postPhoto = (photo) => {
-    http.post('/upload/registrations', { photo })
-}
 
-export default postPhoto
+export const postPhoto = file => {
+    const headers = {
+            'Content-Type': 'multipart/form-data'
+        },
+        data = new FormData()
+
+    data.append('file', file)
+    data.append('name', file.name)
+
+    return http.post(
+        '/upload/registrations',
+        data,
+        { headers }
+    )
+}
