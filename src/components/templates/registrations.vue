@@ -109,14 +109,15 @@
                                 height: 100%
                                 top: 0
                                 left: 0
+                                z-index: 2
 
                             > .photo-container
                                 position: absolute
                                 z-index: 1
-                                top: 0
-                                left: 0
-                                width: 100%
-                                height: 100%
+                                top: 1%
+                                left: 1%
+                                width: 98%
+                                height: 98%
                                 background-repeat: no-repeat
                                 background-position: center center
                                 background-size: cover
@@ -291,7 +292,7 @@
                     post(input.files[0])
                     .then(response => {
                         console.log(response)
-                        this.imageUpload = 'api/uploads/' + response.data.file
+                        this.imageUpload = 'http://www.somostodosjao.com.br/api/uploads/' + response.data.file
                         this.loading = false
                     })
                     .catch((error) => {
