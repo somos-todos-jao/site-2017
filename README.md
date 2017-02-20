@@ -1,6 +1,6 @@
 # somos-todos-jao-2017
 
-> FrontEnd client to manage artists and other stuffs that will presented on 2017 edition of Meu Nome é JÃO Cultural Festival Using HTML5 + Pug + VueJS + SASS + Firebase
+> FrontEnd client to manage artists and other stuffs that will presented on 2017 edition of Meu Nome é JÃO Cultural Festival Using HTML5 + Pug + VueJS + SASS
 
 ## Build Setup
 
