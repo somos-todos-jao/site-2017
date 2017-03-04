@@ -3,7 +3,7 @@ import { requester as http } from './http'
 /**
 * Upload a photo to SomosTodosJÃO API | Tekoá
 *
-* @param {file} photo
+* @param {file} file
 *
 * @returns {Promise}
 */
