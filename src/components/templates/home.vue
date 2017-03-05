@@ -10,11 +10,15 @@
     .component
         hero
         registrations
+        release
+        contact
 </template>
 
 <script>
-    import hero from './hero'
-    import registrations from './registrations'
+    import hero from '../organisms/hero'
+    import registrations from '../organisms/registrations'
+    import release from '../organisms/release'
+    import contact from '../organisms/contact'
     import { mapState, mapActions } from 'vuex'
 
     export default {
@@ -22,7 +26,9 @@
         }),
         components: {
             hero,
-            registrations
+            registrations,
+            release,
+            contact
         },
         computed: {
             ...mapState({

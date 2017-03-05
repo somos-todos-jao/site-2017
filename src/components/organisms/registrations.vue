@@ -30,11 +30,21 @@
         > .hero-body
             +flex(column, n, center, center)
 
+            > .border-bottom
+                position: absolute
+                transform: rotate(180deg)
+                bottom: $pixel-proportion * -1.5
+                height: auto
+                width: 100%
+
             > h1
                 width: 60%
-                margin-top: $pixel-proportion * 4
+                // margin-top: $pixel-proportion
                 margin-right: auto
                 margin-left: auto
+            
+            > h2 
+                margin-bottom: $pixel-proportion * 7
 
             > .campos-incricoes
                 z-index: 9
@@ -46,6 +56,7 @@
                 > #send-form
                     font-weight: 400
                     margin-top: $pixel-proportion * 2
+                    margin-bottom: $pixel-proportion * 3
 
                 > .input-group
                     width: 100%
@@ -156,17 +167,17 @@
                                 opacity: 0
                                 +cursor-pointer
     .is-transparent
-        top: 100%
-        position: absolute
+        // top: 100%
+        // position: absolute
         background-color: $transparent
         z-index: 9
 </style>
 
 <template lang="pug">
-    section.hero.is-fullheight.is-transparent
+    section#inscricoes.hero.is-fullheight.is-transparent
         .hero-body
             h1.title.is-1 inscrições
-            h2.subtitle.is-4 preencha os dados abaixo para participar
+            h2.subtitle.is-4 preencha os dados abaixo e se increva no rolê
 
             .campos-incricoes
                 span.input-group
@@ -175,7 +186,7 @@
                             input#upload-field(type="file", @change="fetchPhoto")
                             .border
                                 img(src="static/moldura.png")
-                            .photo-container(:style="{backgroundImage: 'url(' + form.photo + ')'}")
+                            .photo-container(:style="{backgroundImage: 'url(' + form.photoURL + ')'}")
                             .camera-icon
                                 i.fa(:class="loadingIcon")
                                 label(v-if="!photoLoading") {{photoMessage}}
@@ -205,7 +216,7 @@
 
                     span.input-item
                         label integrantes *
-                        input#integrantes(v-model="form.members", maxlength="2", type="number",  min="1", max="50")
+                        input#integrantes(v-model="form.members", maxlength="2", type="number",  min="1", max="50", placeholder="SOMENTE NÚMEROS")
 
                 span.input-group
                     span.input-item
@@ -219,29 +230,29 @@
                 span.input-group
                     span.input-item
                         label perfil ou fanpage no facebook *
-                        input#facebook(v-model="form.facebook", maxlength="200", type="url")
+                        input#facebook(v-model="form.facebook", maxlength="200", type="url", placeholder="HTTP://FB.COM/SUA-FAN-PAGE")
 
                     span.input-item
                         label site
-                        input#site(v-model="form.webpage", maxlength="200", type="url")
+                        input#site(v-model="form.webpage", maxlength="200", type="url", placeholder="HTTP://WWW.SITE.COM.BR")
 
                     span.input-item
                         label instagram
-                        input#instagram(v-model="form.instagram", maxlength="200", type="url")
+                        input#instagram(v-model="form.instagram", maxlength="200", type="url", placeholder="@SEU_PERFIL")
 
                 span.input-group
                     span.input-item
                         label email *
-                        input#email(v-model="form.email", maxlength="100", type="email")
+                        input#email(v-model="form.email", maxlength="100", type="email", placeholder="EMAIL@DECONTATO.COM")
 
                     span.input-item
                         label telefone de contato *
-                        input#telefone(v-model="form.telephone", maxlength="15", type="tel")
+                        input#telefone(v-model="form.telephone", maxlength="15", type="tel", placeholder="SOMENTE NÚMEROS")
 
                 span.input-group
                     span.input-item
                         label endereço do responsável *
-                        input#endereco(v-model="form.address", maxlength="200", type="text")
+                        input#endereco(v-model="form.address", maxlength="200", type="text", placeholder="COMPLETO, COM NÚMERO E COMPLEMENTOS'")
 
                 span.input-group
                     span.input-item
@@ -260,7 +271,7 @@
                 span.input-group(v-if="type == 0")
                     span.input-item
                         label vídeo no youtube *
-                        input#youtube(v-model="form.video", maxlength="100", type="url")
+                        input#youtube(v-model="form.video", maxlength="100", type="url", placeholder="ENSAIO, ENTREVISTA, CLIPE, PORTIFOLIO, APRESENTAÇÃO...")
 
                 span.input-group
                     span.input-item
@@ -274,6 +285,8 @@
                             | Confirmo que li o contrato, concordo com os termos e que o apresentarei assinado quando solicitado
 
                 a#send-form.button.is-primary.is-large(:class="{ 'is-loading' : loading }", @click="fetchRegistration()") {{buttonMessage}}
+
+            img.border-bottom(src="static/border-branco-01.svg")
 </template>
 
 <script>
@@ -290,6 +303,7 @@
             buttonMessage: 'Enviar inscrição',
             form: {
                 photo: '',
+                photoURL: '',
                 name: '',
                 type: '',
                 gender: '',
@@ -349,8 +363,9 @@
                     .then(response => {
                         console.log(response)
 
-                        this.form.photo = 'http://www.somostodosjao.com.br/api/uploads/' + response.data.file
-                        this.photoLoading = false
+                        this.form.photoURL = 'http://www.somostodosjao.com.br/api/uploads/' + response.data.file
+                        this.form.photo = response.data.file
+                        // this.photoLoading = false
                         this.loading = false
                         this.photoMessage = ''
                     })
@@ -374,6 +389,30 @@
                 .then(response => {
                     console.log(response)
 
+                    this.form = {
+                        photo: '',
+                        photoURL: '',
+                        name: '',
+                        type: '',
+                        gender: '',
+                        members: '',
+                        majorName: '',
+                        doc: '',
+                        facebook: '',
+                        webpage: '',
+                        instagram: '',
+                        email: '',
+                        telephone: '',
+                        address: '',
+                        city: '',
+                        state: '',
+                        resume: '',
+                        video: '',
+                        contract: ''
+                    }
+
+                    this.photoMessage = 'Foto oficial'
+                    this.photoLoading = false
                     this.loading = false
                     this.buttonMessage = 'Seu cadastro foi realizado em sucesso!'
                 })
@@ -385,6 +424,7 @@
                     } else {
                         this.buttonMessage = error
                         console.log('Post error. ' + error)
+                        this.buttonMessage = 'Não foi possível completar o seu cadastro. Tente novamente em breve.'
                     }
                     this.loading = false
                 })
