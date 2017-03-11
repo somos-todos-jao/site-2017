@@ -14,6 +14,7 @@
                     align-self: flex-start
                     min-width: 150vw
                     top: -30vw
+                    left: -26%
                     z-index: 1
 
                 > #date
@@ -40,7 +41,7 @@
                     left: 0
                     height: $pixel-proportion * 4
                     width: auto
-    
+
     @media only screen and (min-width: 1025px)
         section
             background-color: $color1
