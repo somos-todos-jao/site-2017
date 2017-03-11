@@ -1,171 +1,353 @@
 <style scoped lang="sass">
     @import ../../sass/imports/_extend
 
-    section
-        z-index: 9
-        width: 100%
+    @media only screen and (max-width: 1024px)
+        section
+            z-index: 9
+            width: 100%
 
-        h1.title
-            font-size: $pixel-proportion * 10
+            h1.title
+                font-size: $pixel-proportion * 6
 
-        h1.title,
-        h2.subtitle
-            font-weight: 900
-            text-align: center
-            color: $color1
+            h1.title,
+            h2.subtitle
+                font-weight: 900
+                text-align: center
+                color: $color1
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        label,
-        p
-            color: $white1
-            font-weight: 400
-            font-size: 110%
-            +lower-case
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            label,
+            p
+                color: $white1
+                font-weight: 400
+                font-size: 110%
+                +lower-case
 
-        > .hero-body
-            +flex(column, n, center, center)
-
-            > .border-bottom
-                position: absolute
-                transform: rotate(180deg)
-                bottom: $pixel-proportion * -1.5
-                height: auto
-                width: 100%
-
-            > h1
-                width: 60%
-                // margin-top: $pixel-proportion
-                margin-right: auto
-                margin-left: auto
-            
-            > h2 
-                margin-bottom: $pixel-proportion * 7
-
-            > .campos-incricoes
-                z-index: 9
-                width: 60%
-                margin-right: auto
-                margin-left: auto
+            > .hero-body
                 +flex(column, n, center, center)
 
-                > #send-form
-                    font-weight: 400
-                    margin-top: $pixel-proportion * 2
+                > .border-bottom
+                    position: absolute
+                    transform: rotate(180deg)
+                    bottom: 0
+                    left: 0
+                    height: $pixel-proportion * 4
+                    width: auto
+
+                > h1
+                    width: 100%
+                    margin-right: auto
+                    margin-left: auto
+                
+                > h2 
                     margin-bottom: $pixel-proportion * 3
 
-                > .input-group
-                    width: 100%
-                    +flex(row, n, center, center)
+                > .campos-incricoes
+                    z-index: 9
+                    width: 90%
+                    margin-right: auto
+                    margin-left: auto
+                    +flex(column, n, center, center)
 
-                    > .input-item
+                    > #send-form
+                        font-weight: 400
+                        margin-top: $pixel-proportion * 2
+                        margin-bottom: $pixel-proportion * 3
+                        max-width: 100%
+                        white-space: initial
+                        height: auto
+
+                    > .input-group
                         width: 100%
-                        margin: $pixel-proportion
                         +flex(column, n, center, center)
 
-                        > .checkbox
-                            &:hover
-                                color: $color1
-
-                        > .button
-                            padding-top: $pixel-proportion * 2
-                            padding-bottom: $pixel-proportion
-                            +flex(column, n, center, center)
-                            margin-bottom: $pixel-proportion
-                            height: auto
-
-                        > input,
-                        > textarea
+                        > .input-item
                             width: 100%
                             margin: $pixel-proportion
-                            padding: $pixel-proportion * 2
-                            color: $black1
-                            background-color: $white1
-                            +border-box
-                            +upper-case
+                            margin-bottom: 0
+                            +flex(column, n, center, center)
 
-                        > .toggle-type
-                            +flex(row, n, center, center)
-
-                            > label
-                                font-weight: 900
-                                font-size: 150%
-                                +cursor-pointer
-
-                            > i
-                                margin: $pixel-proportion
-                                margin-left: $pixel-proportion * 3
-                                margin-right: $pixel-proportion * 3
-                                font-size: $pixel-proportion * 6
-                                height: $pixel-proportion * 4
-                                line-height: $pixel-proportion * 4
-                                border-radius: $pixel-proportion * 2 !important
-                                +cursor-pointer
-
-                            > .fa-toggle-on
-                                text-shadow: -1px -1px 0 $color1, 1px -1px 0 $color1, -1px 1px 0 $color1, 1px 1px 0 $color1
-                                background-color: $color1
-                                color: $white1
-
-                            > label.is-red
-                                color: $color1
-
-                        > .photo-upload
-                            position: relative
-                            overflow: hidden
-                            width: $pixel-proportion * 45
-                            height: $pixel-proportion * 45
-                            background-color: $white1
-                            +flex(row, n, center, center)
-
-                            > .border
-                                position: absolute
-                                align-self: center
-                                width: 100%
-                                height: 100%
-                                top: 0
-                                left: 0
-                                z-index: 2
-
-                            > .photo-container
-                                position: absolute
-                                z-index: 1
-                                top: 1%
-                                left: 1%
-                                width: 98%
-                                height: 98%
-                                background-repeat: no-repeat
-                                background-position: center center
-                                background-size: cover
-
-                            > .camera-icon
-                                top: 0
-                                left: 0
-                                width: 100%
-                                height: 100%
-                                position: absolute
+                            > .checkbox
                                 +flex(column, n, center, center)
-                                > i
-                                    font-size: $pixel-proportion * 8
-                                    color: $white1
-                                    text-shadow: -5px -5px 0 $color1, 5px -5px 0 $color1, -5px 5px 0 $color1, 5px 5px 0 $color1
+                                text-align: center
+
+                                &:hover
+                                    color: $color1
+
+                            > .button
+                                padding-top: $pixel-proportion * 2
+                                padding-bottom: $pixel-proportion
+                                +flex(column, n, center, center)
+                                margin-bottom: $pixel-proportion
+                                height: auto
+                                max-width: 100%
+
+                                > span
+                                    max-width: 100%
+                                    white-space: initial
+
+                            > input,
+                            > textarea
+                                width: 100%
+                                margin: $pixel-proportion
+                                padding: $pixel-proportion * 2
+                                color: $black1
+                                background-color: $white1
+                                +border-box
+                                +upper-case
+
+                            > .toggle-type
+                                +flex(column, n, center, center)
 
                                 > label
-                                    text-align: center
-                                    width: 60%
-                                    color: $color1
-                                    margin-top: $pixel-proportion
+                                    font-weight: 900
+                                    width: 100%
+                                    font-size: 140%
+                                    +cursor-pointer
 
-                            > input
+                                > i
+                                    margin: $pixel-proportion
+                                    margin-left: $pixel-proportion * 3
+                                    margin-right: $pixel-proportion * 3
+                                    font-size: $pixel-proportion * 6
+                                    height: $pixel-proportion * 4
+                                    line-height: $pixel-proportion * 4
+                                    border-radius: $pixel-proportion * 2 !important
+                                    +cursor-pointer
+
+                                > .fa-toggle-on
+                                    text-shadow: -1px -1px 0 $color1, 1px -1px 0 $color1, -1px 1px 0 $color1, 1px 1px 0 $color1
+                                    background-color: $color1
+                                    color: $white1
+
+                                > label.is-red
+                                    color: $color1
+
+                            > .photo-upload
                                 position: relative
-                                z-index: 3
-                                transform: scale(13)
-                                opacity: 0
-                                +cursor-pointer
+                                overflow: hidden
+                                width: $pixel-proportion * 35
+                                height: $pixel-proportion * 35
+                                background-color: $white1
+                                +flex(row, n, center, center)
+
+                                > .border
+                                    position: absolute
+                                    align-self: center
+                                    width: 100%
+                                    height: 100%
+                                    top: 0
+                                    left: 0
+                                    z-index: 2
+
+                                > .photo-container
+                                    position: absolute
+                                    z-index: 1
+                                    top: 1%
+                                    left: 1%
+                                    width: 98%
+                                    height: 98%
+                                    background-repeat: no-repeat
+                                    background-position: center center
+                                    background-size: cover
+
+                                > .camera-icon
+                                    top: 0
+                                    left: 0
+                                    width: 100%
+                                    height: 100%
+                                    position: absolute
+                                    +flex(column, n, center, center)
+                                    > i
+                                        font-size: $pixel-proportion * 8
+                                        color: $white1
+                                        text-shadow: -5px -5px 0 $color1, 5px -5px 0 $color1, -5px 5px 0 $color1, 5px 5px 0 $color1
+
+                                    > label
+                                        text-align: center
+                                        width: 60%
+                                        color: $color1
+                                        margin-top: $pixel-proportion
+
+                                > input
+                                    position: relative
+                                    z-index: 3
+                                    transform: scale(13)
+                                    opacity: 0
+                                    +cursor-pointer
+
+    @media only screen and (min-width: 1025px)
+        section
+            z-index: 9
+            width: 100%
+
+            h1.title
+                font-size: $pixel-proportion * 10
+
+            h1.title,
+            h2.subtitle
+                font-weight: 900
+                text-align: center
+                color: $color1
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            label,
+            p
+                color: $white1
+                font-weight: 400
+                font-size: 110%
+                +lower-case
+
+            > .hero-body
+                +flex(column, n, center, center)
+
+                > .border-bottom
+                    position: absolute
+                    transform: rotate(180deg)
+                    bottom: $pixel-proportion * -1.5
+                    left: 0
+                    height: auto
+                    width: 100%
+
+                > h1
+                    width: 60%
+                    // margin-top: $pixel-proportion
+                    margin-right: auto
+                    margin-left: auto
+                
+                > h2 
+                    margin-bottom: $pixel-proportion * 7
+
+                > .campos-incricoes
+                    z-index: 9
+                    width: 60%
+                    margin-right: auto
+                    margin-left: auto
+                    +flex(column, n, center, center)
+
+                    > #send-form
+                        font-weight: 400
+                        margin-top: $pixel-proportion * 2
+                        margin-bottom: $pixel-proportion * 3
+
+                    > .input-group
+                        width: 100%
+                        +flex(row, n, center, center)
+
+                        > .input-item
+                            width: 100%
+                            margin: $pixel-proportion
+                            +flex(column, n, center, center)
+
+                            > .checkbox
+                                &:hover
+                                    color: $color1
+
+                            > .button
+                                padding-top: $pixel-proportion * 2
+                                padding-bottom: $pixel-proportion
+                                +flex(column, n, center, center)
+                                margin-bottom: $pixel-proportion
+                                height: auto
+
+                            > input,
+                            > textarea
+                                width: 100%
+                                margin: $pixel-proportion
+                                padding: $pixel-proportion * 2
+                                color: $black1
+                                background-color: $white1
+                                +border-box
+                                +upper-case
+
+                            > .toggle-type
+                                +flex(row, n, center, center)
+
+                                > label
+                                    font-weight: 900
+                                    font-size: 150%
+                                    +cursor-pointer
+
+                                > i
+                                    margin: $pixel-proportion
+                                    margin-left: $pixel-proportion * 3
+                                    margin-right: $pixel-proportion * 3
+                                    font-size: $pixel-proportion * 6
+                                    height: $pixel-proportion * 4
+                                    line-height: $pixel-proportion * 4
+                                    border-radius: $pixel-proportion * 2 !important
+                                    +cursor-pointer
+
+                                > .fa-toggle-on
+                                    text-shadow: -1px -1px 0 $color1, 1px -1px 0 $color1, -1px 1px 0 $color1, 1px 1px 0 $color1
+                                    background-color: $color1
+                                    color: $white1
+
+                                > label.is-red
+                                    color: $color1
+
+                            > .photo-upload
+                                position: relative
+                                overflow: hidden
+                                width: $pixel-proportion * 45
+                                height: $pixel-proportion * 45
+                                background-color: $white1
+                                +flex(row, n, center, center)
+
+                                > .border
+                                    position: absolute
+                                    align-self: center
+                                    width: 100%
+                                    height: 100%
+                                    top: 0
+                                    left: 0
+                                    z-index: 2
+
+                                > .photo-container
+                                    position: absolute
+                                    z-index: 1
+                                    top: 1%
+                                    left: 1%
+                                    width: 98%
+                                    height: 98%
+                                    background-repeat: no-repeat
+                                    background-position: center center
+                                    background-size: cover
+
+                                > .camera-icon
+                                    top: 0
+                                    left: 0
+                                    width: 100%
+                                    height: 100%
+                                    position: absolute
+                                    +flex(column, n, center, center)
+                                    > i
+                                        font-size: $pixel-proportion * 8
+                                        color: $white1
+                                        text-shadow: -5px -5px 0 $color1, 5px -5px 0 $color1, -5px 5px 0 $color1, 5px 5px 0 $color1
+
+                                    > label
+                                        text-align: center
+                                        width: 60%
+                                        color: $color1
+                                        margin-top: $pixel-proportion
+
+                                > input
+                                    position: relative
+                                    z-index: 3
+                                    transform: scale(13)
+                                    opacity: 0
+                                    +cursor-pointer
     .is-transparent
         // top: 100%
         // position: absolute
@@ -177,7 +359,7 @@
     section#inscricoes.hero.is-fullheight.is-transparent
         .hero-body
             h1.title.is-1 inscrições
-            h2.subtitle.is-4 preencha os dados abaixo e se increva no rolê
+            h2.subtitle.is-4 preencha os dados abaixo pra mostrar sua arte no rolê
 
             .campos-incricoes
                 span.input-group
@@ -276,9 +458,9 @@
                 span.input-group
                     span.input-item
                         a.button.is-medium(href="static/termo-do-participante-meu-nome-e-jao.doc")
-                            span.icon.is-large
+                            span.icon.is-large.is-marginless
                                 i.fa.fa-file-word-o
-                            | Fazer dowload do contrato, termos e condições do festival
+                            span.is-marginless Fazer dowload do contrato, termos e condições do festival
 
                         label.checkbox
                             input(type="checkbox", v-model="form.contract")

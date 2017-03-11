@@ -1,48 +1,95 @@
 <style scoped lang="sass">
     @import ../../sass/imports/_extend
 
-    section  
-        width: 100%
-
-        h1.title
-            font-size: $pixel-proportion * 10
-
-        h1.title,
-        h2.subtitle
-            font-weight: 900
-            text-align: center
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        label,
-            color: $black1
-            font-weight: 400
-            font-size: 110%
-            +lower-case
-        
-        p
-            color: $black1
-            font-weight: 400
-            font-size: 110%
-            text-align: justify
-        
-        > .hero-body
-            +flex(column, n, center, center)
-
-            > h1
-                width: 60%
-                margin-right: auto
-                margin-left: auto
+    @media only screen and (max-width: 1024px)
+        section  
+            width: 100%
             
-            > h2 
-                margin-bottom: $pixel-proportion * 7
+            h1.title
+                font-size: $pixel-proportion * 6
 
-            > .content
-                width: 60%
+            h1.title,
+            h2.subtitle
+                font-weight: 900
+                text-align: center
+                color: $black1
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            label,
+            p
+                color: $white1
+                font-weight: 400
+                font-size: 110%
+                +lower-case
+            
+            p
+                color: $black1
+                font-weight: 400
+                font-size: 110%
+                text-align: justify
+            
+            > .hero-body
+                +flex(column, n, center, center)
+
+                > h1
+                    width: 90%
+                    margin-right: auto
+                    margin-left: auto
+                
+                > h2 
+                    margin-bottom: $pixel-proportion * 3
+
+                > .content
+                    width: 90%
+
+    @media only screen and (min-width: 1025px)
+        section  
+            width: 100%
+
+            h1.title
+                font-size: $pixel-proportion * 10
+
+            h1.title,
+            h2.subtitle
+                font-weight: 900
+                text-align: center
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            label,
+                color: $black1
+                font-weight: 400
+                font-size: 110%
+                +lower-case
+            
+            p
+                color: $black1
+                font-weight: 400
+                font-size: 110%
+                text-align: justify
+            
+            > .hero-body
+                +flex(column, n, center, center)
+
+                > h1
+                    width: 60%
+                    margin-right: auto
+                    margin-left: auto
+                
+                > h2 
+                    margin-bottom: $pixel-proportion * 7
+
+                > .content
+                    width: 60%
 
 
 </style>

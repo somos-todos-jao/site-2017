@@ -1,27 +1,31 @@
 <style scoped lang="sass">
     @import ../../sass/imports/_extend
 
-    nav
-        position: absolute
-        z-index: 9
-        width: 100%
-        // margin-top: $pixel-proportion
-
-        > ul
+    @media only screen and (max-width: 1024px)
+        nav
+            display: none
+    
+    @media only screen and (min-width: 1025px)
+        nav
+            position: absolute
+            z-index: 9
             width: 100%
-            +flex(row, n, center, center)
+            // margin-top: $pixel-proportion
 
-            > li
-                margin: $pixel-proportion * 1.5
-                
-                > a
-                    font-size: $pixel-proportion * 2.5
-                    font-weight: 900
-                    color: $white1
+            > ul
+                width: 100%
+                +flex(row, n, center, center)
 
-                    &:hover
-                        color: $color1
+                > li
+                    margin: $pixel-proportion * 1.5
+                    
+                    > a
+                        font-size: $pixel-proportion * 2.5
+                        font-weight: 900
+                        color: $white1
 
+                        &:hover
+                            color: $color1
 </style>
 
 <template lang="pug">
