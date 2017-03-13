@@ -43,8 +43,8 @@
                     width: 100%
                     margin-right: auto
                     margin-left: auto
-                
-                > h2 
+
+                > h2
                     margin-bottom: $pixel-proportion * 3
 
                 > .campos-incricoes
@@ -224,8 +224,8 @@
                     // margin-top: $pixel-proportion
                     margin-right: auto
                     margin-left: auto
-                
-                > h2 
+
+                > h2
                     margin-bottom: $pixel-proportion * 7
 
                 > .campos-incricoes
@@ -547,20 +547,23 @@
 
                         this.form.photoURL = 'http://www.somostodosjao.com.br/api/uploads/' + response.data.file
                         this.form.photo = response.data.file
-                        // this.photoLoading = false
                         this.loading = false
                         this.photoMessage = ''
                     })
                     .catch((error) => {
-                        console.log('Upload error. HTTP Status: ' + error.response.status)
-                        console.log(error.response.data)
+                        if (error.response !== undefined) {
+                            console.log('Upload error. HTTP Status: ' + error.response.status)
+                            console.log(error.response.data)
 
+                            if (error.response.data.Error === "You try send a png file, but only jpg it's accepted") {
+                                this.photoMessage = "Tente novamente com um arquivo do tipo '.jpg'"
+                            }
+                        } else {
+                            console.log('Upload error. ' + error)
+                            this.photoMessage = 'Não foi possível enviar sua foto. Tente novamente em breve.'
+                        }
                         this.photoLoading = false
                         this.loading = false
-
-                        if (error.response.data.Error === "You try send a png file, but only jpg it's accepted") {
-                            this.photoMessage = "Tente novamente com um arquivo do tipo '.jpg'"
-                        }
                     })
                 }
             },
@@ -599,7 +602,8 @@
                     this.buttonMessage = 'Seu cadastro foi realizado em sucesso!'
                 })
                 .catch((error) => {
-                    if (error.response) {
+                    if (error.hasOwnProperty('response')) {
+                        console.log('aqui')
                         console.log('Post error. HTTP Status: ' + error.response.status)
                         console.log(error.response.data)
                         this.buttonMessage = error.response.data.Error

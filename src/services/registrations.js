@@ -51,6 +51,8 @@ export const postRegistrations = registrations => {
     data.append('youtube', registrations.video)
     data.append('contrato', registrations.contract)
 
+    console.log(registrations)
+
     return http.post(
         '/content/registrations',
         data,
