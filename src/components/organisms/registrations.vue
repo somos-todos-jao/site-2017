@@ -540,6 +540,9 @@
                 if (input.files && input.files[0]) {
                     this.photoLoading = true
                     this.loading = true
+                    this.form.photoURL = ''
+                    this.form.photo = ''
+                    this.photoMessage = ''
 
                     photo(input.files[0])
                     .then(response => {
