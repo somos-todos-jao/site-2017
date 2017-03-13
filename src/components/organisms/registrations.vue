@@ -555,13 +555,16 @@
                             console.log('Upload error. HTTP Status: ' + error.response.status)
                             console.log(error.response.data)
 
-                            if (error.response.data.Error === "You try send a png file, but only jpg it's accepted") {
+                            if (error.response.data.Error) {
                                 this.photoMessage = "Tente novamente com um arquivo do tipo '.jpg'"
                             }
                         } else {
                             console.log('Upload error. ' + error)
                             this.photoMessage = 'Não foi possível enviar sua foto. Tente novamente em breve.'
                         }
+
+                        this.form.photo = ''
+                        this.form.photoURL = ''
                         this.photoLoading = false
                         this.loading = false
                     })
