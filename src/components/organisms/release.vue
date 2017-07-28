@@ -107,7 +107,7 @@
                 p Seguindo o sucesso da primeira edição, o Meu Nome é Jão de 2015 levou novamente milhares de pessoas ao Shopping Center para apreciar novamente uma verdadeira explosão de cultura alternativa e independente. Devido à grande repercussão da edição de 2014 desta vez foi necessária a abertura das inscrições para artistas de toda a região, o que aumentou ainda mais o alcance de público e do número de artistas envolvidos.
                 p Durante os três dias de evento ao todo se apresentaram cerca de 123 músicos, seis pintores, cinco fotógrafos, dezenas de dançarinos, artistas plásticos e escritores. Toda essa galera proporcionou quase 70 horas de integração cultural, com shows e exposições que solidificaram o Festival como o maior agregador cultural do Noroeste Paulista.
                 p Para a edição de 2016 o Festival incorporou em sua grade de atrações o teatro, com diversas apresentações em espaços públicos e no Teatro Municipal de Fernandópolis. O evento contou com mais se 200 artistas que preencheram a cidade com diversas intervenções culturais.
-                p Em 2017 o evento se dará nas férias de julho, mais precisamente nos dias 14 e 15, tendo novamente o Shopping como principal sede de atrações.
+                p Em 2017 o evento se dará em setembro, mais precisamente nos dias 8 e 9, tendo novamente o Shopping como principal sede de atrações.
                 p Em breve traremos mais um monte de novidades que farão parte da edição de 2017 do Meu Nome é Jão Festival Cultural - cultura independente para quem depende de cultura.
 </template>
 
