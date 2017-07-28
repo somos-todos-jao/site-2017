@@ -2,10 +2,10 @@
     @import ../../sass/imports/_extend
 
     @media only screen and (max-width: 1024px)
-        section  
+        section
             background-color: $color1
             width: 100%
-            
+
             h1.title
                 font-size: $pixel-proportion * 6
 
@@ -27,13 +27,13 @@
                 font-weight: 400
                 font-size: 110%
                 +lower-case
-            
+
             p
                 color: $black1
                 font-weight: 400
                 font-size: 110%
                 text-align: center
-            
+
             > .hero-body
                 +flex(column, n, center, center)
 
@@ -54,8 +54,8 @@
                     width: 60%
                     margin-right: auto
                     margin-left: auto
-                
-                > h2 
+
+                > h2
                     margin-bottom: $pixel-proportion * 3
 
                 > .content
@@ -83,13 +83,13 @@
                         > .name
                             font-weight: 900
                             font-size: 150%
-                        
+
                         > .email
                             font-weight: 400
                             font-size: 100%
 
     @media only screen and (min-width: 1025px)
-        section  
+        section
             background-color: $color1
             width: 100%
 
@@ -112,13 +112,13 @@
                 font-weight: 400
                 font-size: 110%
                 +lower-case
-            
+
             p
                 color: $black1
                 font-weight: 400
                 font-size: 110%
                 text-align: center
-            
+
             > .hero-body
                 +flex(column, n, center, center)
 
@@ -138,8 +138,8 @@
                     width: 60%
                     margin-right: auto
                     margin-left: auto
-                
-                > h2 
+
+                > h2
                     margin-bottom: $pixel-proportion * 7
 
                 > .content
@@ -166,7 +166,7 @@
                         > .name
                             font-weight: 900
                             font-size: 150%
-                        
+
                         > .email
                             font-weight: 400
                             font-size: 100%
@@ -176,7 +176,7 @@
     section#contato.hero.is-fullheight
         .hero-body
             .border-top
-                img(src="static/border-branco-01.svg")
+                img(src="static/border-preto-01.svg")
 
             h1.title.is-1 contato
             h2.subtitle.is-4 encontre o jão
@@ -193,12 +193,12 @@
                     i.fa.fa-instagram
                 a
                     i.fa.fa-spotify
-            
+
             .staff
                 .member
                     .name Luigui Delyer
                     .email luigui@somostodosjao.com.br
-                
+
                 .member
                     .name Gustavo Jesus
                     .email jesus@somostodosjao.com.br
