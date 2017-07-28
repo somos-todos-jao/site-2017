@@ -9,7 +9,7 @@
 <template lang="pug">
     .component
         hero
-        registrations
+        //- registrations
         release
         contact
 </template>
