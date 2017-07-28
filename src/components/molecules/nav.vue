@@ -4,7 +4,7 @@
     @media only screen and (max-width: 1024px)
         nav
             display: none
-    
+
     @media only screen and (min-width: 1025px)
         nav
             position: absolute
@@ -18,7 +18,7 @@
 
                 > li
                     margin: $pixel-proportion * 1.5
-                    
+
                     > a
                         font-size: $pixel-proportion * 2.5
                         font-weight: 900
@@ -36,7 +36,7 @@
 
         ul
             +navItem('#home', 'home')
-            +navItem('#inscricoes', 'inscrições')
+            //- +navItem('#inscricoes', 'inscrições')
             +navItem('#o-festival', 'o festival')
             +navItem('#contato', 'contato')
 </template>
