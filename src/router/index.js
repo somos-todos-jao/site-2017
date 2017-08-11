@@ -17,6 +17,13 @@ export default new VueRouter({
             }
         },
         {
+            path: '/cadastro',
+            name: 'cadastro',
+            components: {
+                content: load('templates/cadastro')
+            }
+        },
+        {
             path: '*',
             redirect: '/'
         }

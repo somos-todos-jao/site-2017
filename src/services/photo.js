@@ -18,7 +18,7 @@ export const postPhoto = file => {
     data.append('name', file.name)
 
     return http.post(
-        '/upload',
+        '/upload/',
         data,
         { headers }
     )

@@ -467,8 +467,7 @@
                             | Confirmo que li o contrato, concordo com os termos e que o apresentarei assinado quando solicitado
 
                 a#send-form.button.is-primary.is-large(:class="{ 'is-loading' : loading }", @click="fetchRegistration()") {{buttonMessage}}
-
-            img.border-bottom(src="static/border-branco-01.svg")
+                //- img.border-bottom(src="static/border-branco-01.svg")
 </template>
 
 <script>

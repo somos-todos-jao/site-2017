@@ -185,13 +185,13 @@
                 p Se você quiser patrocinar este evento, ajudar de alguma maneira ou caso você ainda tenha alguma dúvida estamos dispostos a ajudar, envie-nos um e-mail ou entre em contato conosco através de algum dos nossos canais de mídias sociais.
 
             .social-media
-                a
+                a(href="https://www.facebook.com/somostodosjao", target="_blank")
                     i.fa.fa-facebook
-                a
+                a(href="https://www.twitter.com/somostodosjao", target="_blank")
                     i.fa.fa-twitter
-                a
+                a(href="https://www.instagram.com/somostodosjao", target="_blank")
                     i.fa.fa-instagram
-                a
+                a(href="https://open.spotify.com/user/12167326652/playlist/66dQgEbn8LJ74qkL1lAk0g", target="_blank")
                     i.fa.fa-spotify
 
             .staff
